@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Bootlegger Coffee Company — Home</title>
+  <meta name="description" content="Bootlegger Coffee Company — Artisan coffee, all-day menu and cozy cafés across South Africa." />
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Mobile-first base styles */
+    :root{
+      --brand:#6b3f2b;
+      --accent:#d9a06b;
+      --muted:#6b6b6b;
+      --max-width:1100px;
+      --radius:12px;
+      --gap:1rem;
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;}
+    body{
+      margin:0;
+      color:#222;
+      line-height:1.45;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      background:#d9d9d9; /* Changed background to grey */
+    }
+
+    .container{max-width:var(--max-width);margin:0 auto;padding:1rem;}
+
+    /* Header / Nav */
+    header{
+      background:#fff;
+      border-bottom:1px solid rgba(0,0,0,0.06);
+      position:sticky;top:0;z-index:30;
+      backdrop-filter: blur(6px);
+    }
+    .topbar{display:flex;align-items:center;justify-content:space-between;padding:.6rem 1rem;gap:.75rem;}
+    .brand{display:flex;align-items:center;gap:.6rem;text-decoration:none;color:var(--brand);}
+    .brand img{width:56px;height:56px;object-fit:cover;border-radius:10px;}
+    .brand h1{font-size:1.05rem;margin:0;font-weight:700;letter-spacing:.2px}
+    nav ul{display:flex;gap:.6rem;list-style:none;padding:0;margin:0;align-items:center;}
+    nav a{display:inline-block;padding:.45rem .65rem;border-radius:8px;text-decoration:none;color:var(--muted);font-weight:600;}
+    nav a:hover, nav a.active{background:rgba(107,63,43,0.06);color:var(--brand);}
+
+    /* Hero */
+    .hero{display:grid;gap:1rem;align-items:center;padding:1.25rem 0}
+    .hero-grid{display:grid;grid-template-columns:1fr;gap:1rem;align-items:center;}
+    .hero-card{
+      background:#fff;border-radius:var(--radius);box-shadow:0 6px 22px rgba(43,28,19,0.06);overflow:hidden;
+      display:flex;flex-direction:column;
+    }
+    .hero-media{width:100%;height:220px;object-fit:cover;display:block;}
+    .hero-body{padding:1rem;}
+    .kicker{color:var(--brand);font-weight:700;font-size:.85rem;margin-bottom:.4rem;}
+    .cta-row{display:flex;gap:.6rem;margin-top:1rem;flex-wrap:wrap;}
+    .btn{background:var(--brand);color:white;padding:.6rem .9rem;border-radius:10px;text-decoration:none;font-weight:700;}
+    .btn.ghost{background:transparent;border:2px solid var(--brand);color:var(--brand);}
+
+    /* Features */
+    .features{display:grid;grid-template-columns:1fr;gap:1rem;margin-top:1rem;}
+    .feature{background:#fff;padding:1rem;border-radius:12px;box-shadow:0 4px 14px rgba(43,28,19,0.04);}
+    .feature h3{margin:.2rem 0 .6rem 0}
+    .grid-2{display:grid;grid-template-columns:1fr;gap:1rem;}
+
+    /* Footer */
+    footer{padding:1.25rem 0;margin-top:2rem;border-top:1px solid rgba(0,0,0,0.05);background:transparent;}
+    .footer-grid{display:grid;grid-template-columns:1fr;gap:.75rem;align-items:start;}
+
+    /* Utilities */
+    .muted{color:var(--muted)}
+    .small{font-size:.9rem}
+    img.responsive{max-width:100%;height:auto;display:block;border-radius:8px;}
+
+    /* Larger screens */
+    @media(min-width:800px){
+      .hero-grid{grid-template-columns: 1fr 420px;align-items:center;}
+      .features{grid-template-columns:repeat(3,1fr);}
+      nav ul{gap:1rem}
+      .footer-grid{grid-template-columns:1fr 1fr;gap:1rem}
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden">Skip to main content</a>
+
+  <header role="banner">
+    <div class="container topbar">
+      <a class="brand" href="index.html" aria-label="Bootlegger Coffee Home">
+        <img src="images/Logo.JPG" alt="Bootlegger Coffee logo"> 
+        <div>
+          <h1>Bootlegger Coffee</h1>
+          <div class="small muted">Artisan coffee • South Africa</div>
+        </div>
+      </a>
+
+      <nav role="navigation" aria-label="Main navigation">
+        <ul>
+          <li><a class="active" href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="products_services.html">Menu</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="container" role="main">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-grid">
+        <article class="hero-card" aria-labelledby="hero-title">
+          <img src="images/hero-coffee.webp" alt="Barista preparing espresso at Bootlegger Coffee" class="hero-media">
+          <div class="hero-body">
+            <div class="kicker">Handcrafted • Locally roasted</div>
+            <h2 id="hero-title">Coffee that connects people</h2>
+            <p class="muted">At Bootlegger Coffee we craft specialty espresso drinks, baked goods and all-day meals in our Cape Town cafés. We roast locally, support local suppliers, and design cafés for connection.</p>
+            <div class="cta-row">
+              <a class="btn" href="products_services.html">See our Menu</a>
+              <a class="btn ghost" href="contact.html">Find a Store</a>
+            </div>
+          </div>
+        </article>
+
+        <aside class="feature" aria-labelledby="visit-title">
+          <h3 id="visit-title">Visit a Bootlegger near you</h3>
+          <p class="small muted">We have multiple locations across South Africa — cafés designed for quick coffee or lingering brunches.</p>
+          <div style="margin-top:.75rem">
+            <img src="images/Bootleggers-stores.jpg" width="100%" height="220" alt="Bootlegger Coffee stores">
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section aria-labelledby="whats-new" style="margin-top:1.25rem;">
+      <div class="container">
+        <h2 id="whats-new">What we offer</h2>
+        <div class="features">
+          <div class="feature" role="article">
+            <h3>Specialty Coffee</h3>
+            <p class="small muted">Single-origin espresso, seasonal blends and expertly-pulled coffees from trained baristas.</p>
+          </div>
+          <div class="feature" role="article">
+            <h3>All-day Menu</h3>
+            <p class="small muted">Breakfast, light lunches, bakery goods and plant-based options — crafted for great taste and balance.</p>
+          </div>
+          <div class="feature" role="article">
+            <h3>Community & Events</h3>
+            <p class="small muted">Workshops, tastings and community events — follow us on social media for upcoming dates.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section aria-labelledby="sustainability" style="margin-top:1.25rem;">
+      <div class="grid-2">
+        <article class="feature" aria-labelledby="sustain-title">
+          <h3 id="sustain-title">Sourcing & Sustainability</h3>
+          <p class="muted small">We partner with trusted suppliers and sustainable farms to bring ethically-sourced coffee to your cup. Our roasting and operations prioritise waste reduction and local partnerships.</p>
+        </article>
+        <article class="feature" aria-labelledby="shop-title">
+          <h3 id="shop-title">Support Local Roastery</h3>
+          <p class="muted small">Buy our beans in-store or order for delivery — blends roasted in small batches for freshness.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer role="contentinfo">
+    <div class="container footer-grid">
+      <div>
+        <strong>Bootlegger Coffee Company</strong>
+        <div class="small muted">Cape Town HQ • Proudly South African</div>
+        <address class="small" style="margin-top:.5rem">
+          Email: <a href="mailto:info@bootleggercoffee.co.za">info@bootleggercoffee.co.za</a><br>
+          Phone: <a href="tel:+27210000000">+27 21 000 0000</a>
+        </address>
+      </div>
+      <div>
+        <nav aria-label="Footer links" class="small">
+          <a href="about.html">About</a> •
+          <a href="products_services.html">Menu</a> •
+          <a href="gallery.html">Gallery</a> •
+          <a href="contact.html">Contact</a>
+        </nav>
+        <div class="small muted" style="margin-top:.6rem">&copy; <span id="year"></span> Bootlegger Coffee. All rights reserved.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Footer year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
