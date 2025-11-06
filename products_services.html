@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Menu & Products — Bootlegger Coffee</title>
+  <meta name="description" content="Bootlegger Coffee — browse our menu including espresso, signature drinks, breakfast and bakery items." />
+  <link rel="stylesheet" href="style.css">
+  <style>
+    :root{
+      --brand:#6b3f2b;
+      --accent:#d9a06b;
+      --muted:#6b6b6b;
+      --max-width:1100px;
+      font-family:Inter,system-ui,Roboto,Arial;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      background:#d9d9d9; /* changed background to grey */
+      color:#222;
+    }
+    .container{max-width:var(--max-width);margin:0 auto;padding:1rem}
+    header{border-bottom:1px solid rgba(0,0,0,.06);position:sticky;top:0;background:#fff;z-index:20}
+    .topbar{display:flex;align-items:center;justify-content:space-between;padding:.6rem 1rem}
+    nav ul{display:flex;gap:.6rem;list-style:none;padding:0;margin:0}
+    nav a{padding:.45rem .6rem;border-radius:8px;text-decoration:none;color:var(--muted);font-weight:600;}
+    nav a.active{color:var(--brand);background:rgba(107,63,43,.06)}
+
+    main{padding:1rem 0}
+    .grid{display:grid;grid-template-columns:1fr;gap:1rem}
+    .menu-section{background:#fff;padding:1rem;border-radius:12px;box-shadow:0 6px 22px rgba(43,28,19,.04)}
+    .menu-grid{display:grid;grid-template-columns:1fr;gap:.7rem}
+    .menu-item{display:flex;justify-content:space-between;align-items:center;padding:.4rem 0;border-bottom:1px dashed rgba(0,0,0,.04)}
+    .price{font-weight:700;color:var(--brand)}
+    .small{color:var(--muted);font-size:.95rem}
+
+    @media(min-width:900px){
+      .grid{grid-template-columns:2fr 1fr}
+      .menu-grid{grid-template-columns:repeat(2,1fr)}
+    }
+  </style>
+</head>
+<body>
+  <header role="banner">
+    <div class="container topbar">
+      <a class="brand" href="index.html" style="display:flex;gap:.6rem;align-items:center;text-decoration:none;color:var(--brand)">
+        <img src="images/Logo.JPG" alt="Bootlegger logo" style="width:56px;height:56px;border-radius:8px;">
+        <div><strong>Bootlegger Coffee</strong><div class="small muted">Menu</div></div>
+      </a>
+
+      <nav aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a class="active" href="products_services.html">Menu</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container" role="main">
+    <h1>Menu & Products</h1>
+    <p class="small muted">A curated menu of coffee, fresh bakery items and all-day dishes — made daily with local ingredients.</p>
+
+    <div class="grid">
+      <section class="menu-section" aria-labelledby="espresso">
+        <h2 id="espresso">Espresso & Coffee</h2>
+        <div class="menu-grid" role="list">
+          <div role="listitem" class="menu-item">
+            <div>
+              <div><strong>Espresso</strong></div>
+              <div class="small muted">Single shot of our signature espresso</div>
+            </div>
+            <div class="price">R18</div>
+          </div>
+          <div role="listitem" class="menu-item">
+            <div>
+              <div><strong>Flat White</strong></div>
+              <div class="small muted">Steamed milk with a double espresso</div>
+            </div>
+            <div class="price">R30</div>
+          </div>
+          <div role="listitem" class="menu-item">
+            <div>
+              <div><strong>Long Black</strong></div>
+              <div class="small muted">Espresso with hot water</div>
+            </div>
+            <div class="price">R25</div>
+          </div>
+          <div role="listitem" class="menu-item">
+            <div>
+              <div><strong>Signature Latte</strong></div>
+              <div class="small muted">Seasonal syrup & latte art</div>
+            </div>
+            <div class="price">R35</div>
+          </div>
+          <div role="listitem" class="menu-item">
+            <div>
+              <div><strong>Cappuccino</strong></div>
+              <div class="small muted">Espresso with steamed milk foam</div>
+            </div>
+            <div class="price">R32</div>
+          </div>
+          <div role="listitem" class="menu-item">
+            <div>
+              <div><strong>Mocha</strong></div>
+              <div class="small muted">Espresso with chocolate and steamed milk</div>
+            </div>
+            <div class="price">R38</div>
+          </div>
+          <div role="listitem" class="menu-item">
+            <div>
+              <div><strong>Macchiato</strong></div>
+              <div class="small muted">Espresso topped with a dollop of foam</div>
+            </div>
+            <div class="price">R28</div>
+          </div>
+          <div role="listitem" class="menu-item">
+            <div>
+              <div><strong>Ristretto</strong></div>
+              <div class="small muted">A shorter, more concentrated espresso shot</div>
+            </div>
+            <div class="price">R20</div>
+          </div>
+          <div role="listitem" class="menu-item">
+            <div>
+              <div><strong>Americano</strong></div>
+              <div class="small muted">Espresso diluted with hot water</div>
+            </div>
+            <div class="price">R26</div>
+          </div>
+          <div role="listitem" class="menu-item">
+            <div>
+              <div><strong>Affogato</strong></div>
+              <div class="small muted">Espresso poured over a scoop of vanilla ice cream</div>
+            </div>
+            <div class="price">R40</div>
+          </div>
+        </div>
+      </section>
+
+      <aside class="menu-section" aria-labelledby="bakery">
+        <h3 id="bakery">Bakery & Light Meals</h3>
+        <div class="menu-item">
+          <div>
+            <div><strong>Sourdough Toast</strong></div>
+            <div class="small muted">House sourdough, butter and preserves</div>
+          </div>
+          <div class="price">R45</div>
+        </div>
+        <div class="menu-item">
+          <div>
+            <div><strong>Avocado Smash</strong></div>
+            <div class="small muted">Seasonal sourdough, lemon & seeds</div>
+          </div>
+          <div class="price">R72</div>
+        </div>
+        <div class="menu-item">
+          <div>
+            <div><strong>Croissant</strong></div>
+            <div class="small muted">Buttery, flaky – baked daily</div>
+          </div>
+          <div class="price">R28</div>
+        </div>
+
+        <h3 style="margin-top:1rem">Retail Beans</h3>
+        <p class="small muted">250g bags — single origin and blends available in-store or online.</p>
+        <div class="menu-item">
+          <div><strong>Signature Blend 250g</strong><div class="small muted">Freshly roasted</div></div>
+          <div class="price">R95</div>
+        </div>
+      </aside>
+    </div>
+
+    <section style="margin-top:1rem" class="menu-section" aria-labelledby="catering">
+      <h2 id="catering">Catering & Events</h2>
+      <p class="muted small">We provide catering for events, tastings and corporate bookings. Contact us for packages and availability.</p>
+      <p class="muted small">Email: <a href="mailto:events@bootleggercoffee.co.za">events@bootleggercoffee.co.za</a></p>
+    </section>
+  </main>
+
+  <footer class="container" role="contentinfo" style="margin-top:2rem;border-top:1px solid rgba(0,0,0,.05);padding-top:1rem">
+    <div style="display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap">
+      <div><strong>Bootlegger Coffee</strong><div class="small muted">Menu & Products</div></div>
+      <div class="small muted">&copy; <span id="year3"></span> Bootlegger Coffee</div>
+    </div>
+  </footer>
+
+  <script>document.getElementById('year3').textContent = new Date().getFullYear();</script>
+</body>
+</html>

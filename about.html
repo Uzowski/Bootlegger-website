@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>About — Bootlegger Coffee Company</title>
+  <meta name="description" content="About Bootlegger Coffee Company — our story, mission and the people behind the cafés." />
+  <style>
+    :root{
+      --brand:#6b3f2b;
+      --muted:#6b6b6b;
+      --max-width:1100px;
+      --radius:12px;
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial;
+    }
+    *{box-sizing:border-box;}
+    body{
+      margin:0;
+      background:#d9d9d9; /* Changed background to grey */
+      color:#222;
+      line-height:1.5;
+    }
+    .container{max-width:var(--max-width);margin:0 auto;padding:1rem;}
+    header{background:#fff;border-bottom:1px solid rgba(0,0,0,.06);position:sticky;top:0;z-index:20;}
+    .topbar{display:flex;align-items:center;justify-content:space-between;padding:.6rem 1rem;}
+    .brand{display:flex;align-items:center;gap:.6rem;text-decoration:none;color:var(--brand);}
+    nav ul{display:flex;gap:.6rem;list-style:none;margin:0;padding:0;}
+    nav a{padding:.45rem .6rem;border-radius:8px;text-decoration:none;color:var(--muted);font-weight:600;}
+    nav a:hover, nav a.active{color:var(--brand);background:rgba(107,63,43,.06);}
+
+    .hero{display:grid;gap:1rem;padding:1.25rem 0;}
+    .hero h1{margin:0;font-size:1.6rem;}
+    .lead{color:var(--muted);}
+
+    .story{display:grid;gap:1rem;margin-top:1rem;}
+    .grid-2{display:grid;grid-template-columns:1fr;gap:1rem;}
+    .card{background:#fff;border-radius:12px;padding:1rem;box-shadow:0 6px 22px rgba(43,28,19,0.04);}
+    img.profile{width:100%;height:auto;border-radius:10px;object-fit:cover;}
+
+    @media(min-width:900px){
+      .grid-2{grid-template-columns:2fr 1fr;}
+    }
+
+    footer{margin-top:2rem;border-top:1px solid rgba(0,0,0,.05);padding:1rem 0;}
+    .muted{color:var(--muted);}
+  </style>
+</head>
+<body>
+  <header role="banner">
+    <div class="container topbar">
+      <a class="brand" href="index.html">
+        <img src="images/Logo.JPG" alt="Bootlegger logo" style="width:56px;height:56px;border-radius:8px;">
+        <div>
+          <strong>Bootlegger Coffee</strong>
+          <div class="muted small">Artisan cafés • South Africa</div>
+        </div>
+      </a>
+
+      <nav aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a class="active" href="about.html">About</a></li>
+          <li><a href="products_services.html">Menu</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container" role="main">
+    <section class="hero" aria-labelledby="about-heading">
+      <h1 id="about-heading">Our story</h1>
+      <p class="lead muted">Bootlegger Coffee Company began in Cape Town in 2013 with a mission to serve exceptional coffee and wholesome food in a welcoming space. From one neighborhood café, the brand has grown into a nationwide favorite, recognized for its bold coffee, fresh meals, and signature black and green style.
+
+Each cup is brewed from carefully selected, sustainably sourced beans, roasted to bring out rich flavor. Beyond coffee, Bootlegger cafés have become community hubs—places to connect, work, and unwind.
+
+Driven by passion, people, and purpose, Bootlegger continues to deliver quality, authenticity, and memorable experiences across South Africa.</p>
+    </section>
+
+    <section class="story">
+      <div class="grid-2">
+        <article class="card" aria-labelledby="mission">
+          <h2 id="mission">Mission & Values</h2>
+          <p class="muted">We exist to craft memorable café experiences with quality coffee, thoughtful food, and service that makes people feel at home. Our values are: <strong>quality</strong>, <strong>community</strong>, and <strong>sustainability</strong>.</p>
+
+          <h3 style="margin-top:1rem">What we do</h3>
+          <ul class="muted">
+            <li>Small-batch roasting for freshness</li>
+            <li>Seasonal menu items made locally</li>
+            <li>Events, workshops and community collaborations</li>
+            <li>Serving all-day café favorites</li>
+            <li>Creating welcoming spaces that double as work, meet-up, and relaxation spots</li>
+            <li>Delivering consistency and quality across every café nationwide</li>
+            <li>Partnering with local suppliers to support South African businesses</li>
+            <li>Franchise opportunities that empower local entrepreneurs to grow with the brand</li>
+            <li>Eco-conscious practices, including recyclable packaging and sustainable coffee sourcing</li>
+            <li>Blending modern café culture with authentic neighborhood charm</li>
+          </ul>
+        </article>
+
+        <aside class="card" aria-labelledby="founder">
+          <h3 id="founder">From the founders Pieter Bloem and De Waal</h3>
+          <img src="images/Founders of Bootlegger.jpg" alt="Founders of Bootlegger Coffee" class="profile" style="margin-bottom:.6rem">
+          <p class="muted small">Bootlegger was born out of a desire to create a neighbourhood café culture where quality coffee and good food are shared. We carefully roast beans and design spaces for connection.</p>
+        </aside>
+      </div>
+
+      <article class="card" aria-labelledby="quality">
+        <h2 id="quality">Quality & Sourcing</h2>
+        <p class="muted">Our beans are sourced from trusted growers and roasted to highlight origin characteristics. We work with suppliers who adhere to ethical practices and use packaging that reduces waste where possible.</p>
+      </article>
+    </section>
+  </main>
+
+  <footer role="contentinfo" class="container">
+    <div style="display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap">
+      <div><strong>Bootlegger Coffee</strong><div class="muted small">Cape Town HQ</div></div>
+      <div class="muted small">&copy; <span id="year2"></span> Bootlegger Coffee — All rights reserved</div>
+    </div>
+  </footer>
+
+  <script>document.getElementById('year2').textContent = new Date().getFullYear();</script>
+</body>
+</html>

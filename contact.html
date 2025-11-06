@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — Bootlegger Coffee</title>
+  <meta name="description" content="Contact Bootlegger Coffee — find store locations, contact details and inspirational motto.">
+  <style>
+    :root {
+      --brand:#6b3f2b;
+      --muted:#6b6b6b;
+      --max-width:1100px;
+      --radius:12px;
+      font-family:Inter,system-ui,Roboto,Arial,sans-serif;
+    }
+    * { box-sizing:border-box; }
+    body { 
+      margin:0; 
+      background:#d9d9d9; 
+      color:#222; 
+      line-height:1.5; 
+    }
+    .container { max-width:var(--max-width); margin:0 auto; padding:1rem; }
+    header { border-bottom:1px solid rgba(0,0,0,.06); position:sticky; top:0; background:#fff; z-index:20; }
+    .topbar { display:flex; align-items:center; justify-content:space-between; padding:.6rem 1rem; }
+    nav ul { display:flex; gap:.6rem; list-style:none; margin:0; padding:0; }
+    nav a { padding:.45rem .6rem; border-radius:8px; text-decoration:none; color:var(--muted); font-weight:600; }
+    nav a.active { color:var(--brand); background:rgba(107,63,43,.06); }
+    main { padding:1rem 0; }
+    h1,h2,h3 { margin:0.5rem 0; }
+    .grid { display:grid; grid-template-columns:1fr; gap:1rem; }
+    .card { background:#fff; border-radius:var(--radius); padding:1rem; box-shadow:0 6px 22px rgba(43,28,19,.04); }
+    address { font-style:normal; }
+    .contact-list { display:flex; flex-direction:column; gap:.5rem; margin-bottom:1rem; }
+    iframe.map { width:100%; height:320px; border:0; border-radius:8px; }
+    iframe.form { width:100%; height:400px; border:0; border-radius:8px; }
+    img.motto-img { width:100%; border-radius:10px; margin-bottom:.6rem; object-fit:cover; }
+    .quote { font-style:italic; color:var(--muted); font-size:1rem; text-align:center; }
+
+    /* Contact form styling */
+    form.contact-form {
+      display:flex;
+      flex-direction:column;
+      gap:.8rem;
+      margin-top:1rem;
+    }
+    form.contact-form input, 
+    form.contact-form textarea {
+      padding:.6rem;
+      border:1px solid #ccc;
+      border-radius:8px;
+      font-size:1rem;
+      font-family:inherit;
+    }
+    form.contact-form button {
+      background:var(--brand);
+      color:#fff;
+      border:none;
+      padding:.6rem 1rem;
+      border-radius:8px;
+      font-weight:600;
+      cursor:pointer;
+      transition:background .3s;
+    }
+    form.contact-form button:hover {
+      background:#4b2b1d;
+    }
+
+    @media(min-width:900px) { .grid { grid-template-columns:1fr 450px; } }
+  </style>
+</head>
+<body>
+  <!-- Header / Navigation -->
+  <header role="banner">
+    <div class="container topbar">
+      <a href="index.html" style="display:flex;align-items:center;gap:.6rem;text-decoration:none;color:var(--brand)">
+        <img src="images/Logo.JPG" alt="Bootlegger Coffee Logo" style="width:56px;height:56px;border-radius:8px;">
+        <strong>Bootlegger Coffee</strong>
+      </a>
+      <nav aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="products_services.html">Menu</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a class="active" href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container" role="main" aria-labelledby="contact-heading">
+    <h1 id="contact-heading">Contact Us</h1>
+    <p class="muted">Reach out to Bootlegger Coffee for enquiries, catering, events, or simply to say hello!</p>
+
+    <section class="grid" aria-label="Contact and Map Section">
+      <!-- Left Column: Contact Info + Image & Motto -->
+      <div class="card">
+        <h2>Get in Touch</h2>
+        <div class="contact-list">
+          <div><strong>Email:</strong> <a href="mailto:info@bootleggercoffee.co.za">info@bootleggercoffee.co.za</a></div>
+          <div><strong>Phone:</strong> <a href="tel:+27210000000">+27 21 000 0000</a></div>
+          <div><strong>Address:</strong> Shop 13 & 14, Village Square, Oxford St, Durbanville, Cape Town, 7550</div>
+          <div class="muted small">Opening hours: Mon–Fri 07:00–17:00, Sat–Sun 08:00–16:00</div>
+        </div>
+
+        <img src="images/Bootlegger-motto.jpg" alt="Bootlegger Coffee motto image" class="motto-img">
+        <p class="quote">"Connecting people through the love of great coffee."</p>
+
+        <!-- JavaScript Form for validation -->
+        <h2 style="margin-top:1.5rem;">Quick Enquiry Form</h2>
+        <form class="contact-form" id="contactForm">
+          <input type="text" id="name" name="name" placeholder="Your Name">
+          <input type="email" id="email" name="email" placeholder="Your Email">
+          <textarea id="message" name="message" rows="4" placeholder="Your Message"></textarea>
+          <button type="submit">Send Message</button>
+        </form>
+      </div>
+
+      <!-- Right Column: Google Map + Google Form -->
+      <aside class="card" aria-labelledby="map-title">
+        <h2 id="map-title">Our Location</h2>
+        <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3314.3139998157803!2d18.64496171170053!3d-33.830012073129836!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1dcc5703abdb7373%3A0xd081740068fabf51!2sBootlegger%20Durbanville!5e0!3m2!1sen!2sza!4v1756151100136!5m2!1sen!2sza" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+        <h2 id="form-title" style="margin-top:1.5rem;">Send Us a Message</h2>
+        <div style="overflow:auto; max-height:450px;">
+          <iframe class="form" src="https://docs.google.com/forms/d/e/1FAIpQLSe00uZ8nTaSohREiQ5OHQa9lDn50MbJH8KpB8Z9bzmD2FaFBA/viewform?usp=dialog" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+      </aside>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer role="contentinfo" class="container" style="margin-top:1.5rem;border-top:1px solid rgba(0,0,0,.05);padding-top:1rem">
+    <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap">
+      <div><strong>Bootlegger Coffee</strong><div class="small muted">Contact & Locations</div></div>
+      <div class="small muted">&copy; <span id="year-contact"></span></div>
+    </div>
+  </footer>
+
+  <script>
+    // Auto-update footer year
+    document.getElementById('year-contact').textContent = new Date().getFullYear();
+
+    // Form validation script
+    document.getElementById("contactForm").addEventListener("submit", function(e) {
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const message = document.getElementById("message").value.trim();
+
+      if (!name || !email || !message) {
+        alert("⚠️ Please fill in all fields before submitting.");
+        e.preventDefault();
+        return;
+      }
+
+      // Simple email pattern validation
+      const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+      if (!email.match(emailPattern)) {
+        alert("⚠️ Please enter a valid email address.");
+        e.preventDefault();
+        return;
+      }
+
+      alert("✅ Thank you, " + name + "! Your message has been submitted successfully.");
+      e.preventDefault(); // prevent actual submit for this demo
+    });
+  </script>
+</body>
+</html>
